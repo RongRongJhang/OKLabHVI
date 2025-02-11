@@ -250,7 +250,7 @@ if __name__ == '__main__':
             print(lpips)
         torch.cuda.empty_cache()
     
-    with open("./results/training/metrics.md", "w") as f:
+    with open("/content/drive/MyDrive/datasets/LOLdataset/results/training/metrics.md", "w") as f:
         f.write("dataset: "+ output_folder + "\n")  
         f.write(f"lr: {opt.lr}\n")  
         f.write(f"batch size: {opt.batchSize}\n")  
