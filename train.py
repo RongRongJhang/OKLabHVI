@@ -79,11 +79,11 @@ def train(epoch):
                 
 
 def checkpoint(epoch):
-    if not os.path.exists("/content/drive/MyDrive/datasets/LOLdataset/weights"):          
-        os.mkdir("/content/drive/MyDrive/datasets/LOLdataset/weights") 
-    if not os.path.exists("./weights/train"):          
-        os.mkdir("/content/drive/MyDrive/datasets/LOLdataset/weights/train")  
-    model_out_path = "/content/drive/MyDrive/datasets/LOLdataset/weights/train/epoch_{}.pth".format(epoch)
+    if not os.path.exists("/content/drive/MyDrive/OKLabHVI/weights"):          
+        os.mkdir("/content/drive/MyDrive/OKLabHVI/weights") 
+    if not os.path.exists("/content/drive/MyDrive/OKLabHVI/weights/train"):          
+        os.mkdir("/content/drive/MyDrive/OKLabHVI/weights/train")  
+    model_out_path = "/content/drive/MyDrive/OKLabHVI/weights/train/epoch_{}.pth".format(epoch)
     torch.save(model.state_dict(), model_out_path)
     print("Checkpoint saved to {}".format(model_out_path))
     return model_out_path
@@ -140,7 +140,7 @@ def build_model():
     print('===> Building model ')
     model = CIDNet().cuda()
     if opt.start_epoch > 0:
-        pth = f"/content/drive/MyDrive/datasets/LOLdataset/weights/train/epoch_{opt.start_epoch}.pth"
+        pth = f"/content/drive/MyDrive/OKLabHVI/weights/train/epoch_{opt.start_epoch}.pth"
         model.load_state_dict(torch.load(pth, map_location=lambda storage, loc: storage))
     return model
 
@@ -250,7 +250,7 @@ if __name__ == '__main__':
             print(lpips)
         torch.cuda.empty_cache()
     
-    with open("/content/drive/MyDrive/datasets/LOLdataset/results/training/metrics.md", "w") as f:
+    with open("/content/drive/MyDrive/OKLabHVI/results/training/metrics.md", "w") as f:
         f.write("dataset: "+ output_folder + "\n")  
         f.write(f"lr: {opt.lr}\n")  
         f.write(f"batch size: {opt.batchSize}\n")  

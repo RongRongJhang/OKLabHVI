@@ -80,19 +80,19 @@ if __name__ == '__main__':
     if cuda and not torch.cuda.is_available():
         raise Exception("No GPU found, or need to change CUDA_VISIBLE_DEVICES number")
     
-    if not os.path.exists('/content/drive/MyDrive/datasets/LOLdataset/output'):          
-            os.mkdir('/content/drive/MyDrive/datasets/LOLdataset/output')  
+    if not os.path.exists('/content/drive/MyDrive/OKLabHVI/output'):          
+            os.mkdir('/content/drive/MyDrive/OKLabHVI/output')  
     
     norm_size = True
     num_workers = 1
     alpha = None
     if ep.lol:
-        eval_data = DataLoader(dataset=get_eval_set("/content/drive/MyDrive/datasets/LOLdataset/eval15/low"), num_workers=num_workers, batch_size=1, shuffle=False)
-        output_folder = '/content/drive/MyDrive/datasets/LOLdataset/output/LOLv1/'
+        eval_data = DataLoader(dataset=get_eval_set("/content/drive/MyDrive/OKLabHVI/datasets/LOLdataset/eval15/low"), num_workers=num_workers, batch_size=1, shuffle=False)
+        output_folder = '/content/drive/MyDrive/OKLabHVI/output/LOLv1/'
         if ep.perc:
-            weight_path = '/content/drive/MyDrive/datasets/LOLdataset/weights/LOLv1/w_perc.pth'
+            weight_path = '/content/drive/MyDrive/OKLabHVI/weights/LOLv1/w_perc.pth'
         else:
-            weight_path = '/content/drive/MyDrive/datasets/LOLdataset/weights/LOLv1/wo_perc.pth'
+            weight_path = '/content/drive/MyDrive/OKLabHVI/weights/LOLv1/wo_perc.pth'
         
             
     elif ep.lol_v2_real:
@@ -146,7 +146,7 @@ if __name__ == '__main__':
             output_folder = './output/VV/'
         elif ep.custome:
             eval_data = DataLoader(dataset=get_SICE_eval_set(ep.custome_path), num_workers=num_workers, batch_size=1, shuffle=False)
-            output_folder = '/content/drive/MyDrive/datasets/LOLdataset/output/custome/'
+            output_folder = '/content/drive/MyDrive/OKLabHVI/output/custome/'
         alpha = ep.alpha
         norm_size = False
         weight_path = ep.unpaired_weights

@@ -123,8 +123,8 @@ def metrics(im_dir, label_dir, use_GT_mean):
 if __name__ == '__main__':
     
     if mea.lol:
-        im_dir = '/content/drive/MyDrive/datasets/LOLdataset/output/LOLv1/*.png'
-        label_dir = '/content/drive/MyDrive/datasets/LOLdataset/eval15/high/'
+        im_dir = '/content/drive/MyDrive/OKLabHVI/output/LOLv1/*.png'
+        label_dir = '/content/drive/MyDrive/OKLabHVI/datasets/LOLdataset/eval15/high/'
     if mea.lol_v2_real:
         im_dir = './output/LOLv2_real/*.png'
         label_dir = './datasets/LOLv2/Real_captured/Test/Normal/'

@@ -22,7 +22,7 @@ def option():
 
     # train datasets
     parser.add_argument('--data_train_lol_blur'     , type=str, default='./datasets/LOL_blur/train')
-    parser.add_argument('--data_train_lol_v1'       , type=str, default='/content/drive/MyDrive/datasets/LOLdataset/our485')
+    parser.add_argument('--data_train_lol_v1'       , type=str, default='/content/drive/MyDrive/OKLabHVI/datasets/LOLdataset/our485')
     parser.add_argument('--data_train_lolv2_real'   , type=str, default='./datasets/LOLv2/Real_captured/Train')
     parser.add_argument('--data_train_lolv2_syn'    , type=str, default='./datasets/LOLv2/Synthetic/Train')
     parser.add_argument('--data_train_SID'          , type=str, default='./datasets/Sony_total_dark/train')
@@ -30,7 +30,7 @@ def option():
 
     # validation input
     parser.add_argument('--data_val_lol_blur'       , type=str, default='./datasets/LOL_blur/eval/low_blur')
-    parser.add_argument('--data_val_lol_v1'         , type=str, default='/content/drive/MyDrive/datasets/LOLdataset/eval15/low')
+    parser.add_argument('--data_val_lol_v1'         , type=str, default='/content/drive/MyDrive/OKLabHVI/datasets/LOLdataset/eval15/low')
     parser.add_argument('--data_val_lolv2_real'     , type=str, default='./datasets/LOLv2/Real_captured/Test/Low')
     parser.add_argument('--data_val_lolv2_syn'      , type=str, default='./datasets/LOLv2/Synthetic/Test/Low')
     parser.add_argument('--data_val_SID'            , type=str, default='./datasets/Sony_total_dark/eval/short')
@@ -39,14 +39,14 @@ def option():
 
     # validation groundtruth
     parser.add_argument('--data_valgt_lol_blur'     , type=str, default='./datasets/LOL_blur/eval/high_sharp_scaled/')
-    parser.add_argument('--data_valgt_lol_v1'       , type=str, default='/content/drive/MyDrive/datasets/LOLdataset/eval15/high/')
+    parser.add_argument('--data_valgt_lol_v1'       , type=str, default='/content/drive/MyDrive/OKLabHVI/datasets/LOLdataset/eval15/high/')
     parser.add_argument('--data_valgt_lolv2_real'   , type=str, default='./datasets/LOLv2/Real_captured/Test/Normal/')
     parser.add_argument('--data_valgt_lolv2_syn'    , type=str, default='./datasets/LOLv2/Synthetic/Test/Normal/')
     parser.add_argument('--data_valgt_SID'          , type=str, default='./datasets/Sony_total_dark/eval/long/')
     parser.add_argument('--data_valgt_SICE_mix'     , type=str, default='./datasets/SICE/Dataset/eval/target/')
     parser.add_argument('--data_valgt_SICE_grad'    , type=str, default='./datasets/SICE/Dataset/eval/target/')
 
-    parser.add_argument('--val_folder', default='/content/drive/MyDrive/datasets/LOLdataset/results/', help='Location to save validation datasets')
+    parser.add_argument('--val_folder', default='/content/drive/MyDrive/OKLabHVI/results/', help='Location to save validation datasets')
 
     # loss weights
     parser.add_argument('--HVI_weight', type=float, default=1.0)
